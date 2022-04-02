@@ -32,13 +32,11 @@ void RoadJunction::scenarioUpdate()
 		transform(directionInput.begin(), directionInput.end(), directionInput.begin(), ::tolower);
 		this->sceneClear = checkDirectionInput(directionCount, directionInput);
 
-		cout << "\n----------------------Press any key to continue----------------------\n" << endl;
+		cout << "\n----------------------Press any key to continue----------------------\n\n" << endl;
 		_getch();
 
-		//system("cls");
 	}
 	scenarioSystem->newScenario();
-	_getch();
 }
 
 int RoadJunction::generateDirections()
