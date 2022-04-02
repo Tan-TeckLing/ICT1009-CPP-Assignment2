@@ -23,6 +23,7 @@ protected:
 	int sceneTag;
 	string sceneName;
 	ScenarioType sceneType;
+	bool sceneClear;
 
 };
 
