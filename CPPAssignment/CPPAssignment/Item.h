@@ -1,16 +1,23 @@
-#pragma once
 
-#include <string>
-#include <iostream>
+#ifndef ITEM_H
+#define ITEM_H
 
+#include "Stats.h"
 
 class Item
 {
-private:
-	std::string name;
-	int value;
 public:
-	Item();
-	virtual ~Item();
+
+	virtual void generateName() = 0;
+
+	void setStat(Stats);
+	Stats getStat();
+	void setInformation(string);
+	string getInformation();
+
+private:
+	Stats stats;
+	string information;
 };
 
+#endif // !ITEM_H

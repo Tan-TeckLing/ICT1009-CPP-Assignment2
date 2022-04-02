@@ -1,12 +1,21 @@
 #include "Item.h"
 
-Item::Item()
+void Item::setStat(Stats stats)
 {
-	this->name = "NONE";
-	this->value = 0;
+	this->stats = stats;
 }
 
-Item::~Item()
+Stats Item::getStat()
 {
+	return this->stats;
+}
 
+void Item::setInformation(string information)
+{
+	this->information = information;
+}
+
+string Item::getInformation()
+{
+	return this->information;
 }
