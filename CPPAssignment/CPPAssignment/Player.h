@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Inventory.h"
+#include <iostream>
 
 
 class Player

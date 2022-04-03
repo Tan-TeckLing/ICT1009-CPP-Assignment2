@@ -21,10 +21,10 @@ void Inventory::expand()
 	this->cap *= 2;
 	Item** tempArray = new Item * [this->cap];
 
-	for (size_t i = 0; i < this->noOfItems; i++)
-	{
-		tempArray[i] = new Item(*itemArray[i]);
-	}
+	//for (size_t i = 0; i < this->noOfItems; i++)
+	//{
+	//	tempArray[i] = new Item(*itemArray[i]);
+	//}
 	for (size_t i = 0; i < this->noOfItems; i++)
 	{
 		delete this->itemArray[i];
@@ -48,5 +48,5 @@ void Inventory::addItem(const Item& item)
 	{
 		expand();
 	}
-	this->itemArray[this->noOfItems++] = new Item(item);
+	//this->itemArray[this->noOfItems++] = new Item(item);
 }
