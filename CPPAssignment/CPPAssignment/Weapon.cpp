@@ -1,6 +1,7 @@
 #include"Weapon.h"
 
 Weapon::Weapon(int damageMin, int damageMax, std::string name, int level)
+	:Item(name, level)
 {
 	this->damageMin = damageMin;
 	this->damageMax = damageMax;

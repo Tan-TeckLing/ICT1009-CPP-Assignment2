@@ -16,9 +16,17 @@ public:
 	Stats getStat();
 	void setInformation(string);
 	string getInformation();
-	virtual Item* clone()const = 0;
+	virtual Item* clone()const;
+
+	Item(std::string name = "NONE", int level = 0);
+
+	inline std::string debugPrint() const {
+		return this->name;
+	}
 
 private:
+	std::string name;
+	int level;
 	ItemType itemType;
 	Stats stats;
 	string information;

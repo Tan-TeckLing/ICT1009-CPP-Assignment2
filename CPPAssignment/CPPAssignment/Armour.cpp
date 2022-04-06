@@ -2,6 +2,7 @@
 
 
 Armour::Armour(int type, int defence, std::string name, int level)
+	:Item(name, level)
 {
 	this->type = type;
 	this->defence = defence;
