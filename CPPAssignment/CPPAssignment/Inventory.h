@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Item.h"
+#include "Weapon.h"
+#include "Armour.h"
 
 class Inventory
 {
@@ -14,6 +15,5 @@ public:
 	Inventory();
 	~Inventory();
 	void addItem(const Item& item);
-	void removeItem(int index);
 };
 

@@ -28,7 +28,7 @@ void Player::initialise(std::string name)
 		6*pow(level,3) +
 		(17*level) - 11);
 	this->maxHealth = 10;
-	this->health = 10;
+	this->health = this->maxHealth;
 	this->attack = 1;
 	this->defence = 1;
 }

@@ -9,8 +9,8 @@ class Player
 private:
 	std::string name;
 	int level;
-	int exp;
-	int expNext;
+	double exp;
+	double expNext;
 	int maxHealth;
 	int health;
 	int attack;
@@ -31,8 +31,8 @@ public:
 	//Accessors
 	inline const std::string& getName() const { return this->name; }
 	inline const int& getLevel() const { return this->level; }
-	inline const int& getExp() const { return this->exp; }
-	inline const int& getExpNext() const { return this->expNext; }
+	inline const double& getExp() const { return this->exp; }
+	inline const double& getExpNext() const { return this->expNext; }
 	inline const int& getMaxHealth() const { return this->maxHealth; }
 	inline const int& getHealth() const { return this->health; }
 	inline const int& getAttack() const { return this->attack; }

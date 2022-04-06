@@ -16,6 +16,7 @@ public:
 	Stats getStat();
 	void setInformation(string);
 	string getInformation();
+	virtual Item* clone()const = 0;
 
 private:
 	ItemType itemType;
