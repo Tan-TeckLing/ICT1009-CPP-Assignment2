@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-class Player
+static class Player
 {
 private:
 	std::string name;
@@ -20,13 +20,14 @@ private:
 
 public:
 	Player();
+	Player(std::string name, int maxHealth, int attack, int defence);
 	virtual ~Player();
 
 	//Functions
 	void initialise(std::string name);
 	void levelUp();
 	void showStats();
-
+	void setPlayer(std::string name, int maxHealth, int attack, int defence);
 
 	//Accessors
 	inline const std::string& getName() const { return this->name; }

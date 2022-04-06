@@ -19,7 +19,7 @@ public:
 	virtual ~Armour();
 
 	//Pure virtual
-	virtual Armour* clone()const;
+	virtual Armour* clone()const override;
 
 	//Functions
 	std::string toString()const;

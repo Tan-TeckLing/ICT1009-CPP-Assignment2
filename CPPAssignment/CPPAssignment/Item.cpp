@@ -36,3 +36,4 @@ string Item::getInformation()
 {
 	return this->information;
 }
+

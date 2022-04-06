@@ -1,6 +1,7 @@
 #ifndef ITEM_H
 #define ITEM_H
 
+#pragma once
 #include "Stats.h"
 #include "ItemType.h"
 
@@ -16,7 +17,7 @@ public:
 	Stats getStat();
 	void setInformation(string);
 	string getInformation();
-	virtual Item* clone()const;
+	virtual Item* clone()const = 0;
 
 	Item(std::string name = "NONE", int level = 0);
 

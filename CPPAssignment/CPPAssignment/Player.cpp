@@ -11,6 +11,15 @@ Player::Player()
 	defence = 0;
 }
 
+Player::Player(std::string name, int maxHealth, int attack, int defence)
+{
+	this->name = name;
+	this->maxHealth = maxHealth;
+	this->attack = attack;
+	this->defence = defence;
+	initialise(name);
+}
+
 Player::~Player()
 {
 
@@ -27,10 +36,10 @@ void Player::initialise(std::string name)
 		(50/3)*(pow(level,3) -
 		6*pow(level,3) +
 		(17*level) - 11);
-	this->maxHealth = 10;
+	this->maxHealth = maxHealth;
 	this->health = this->maxHealth;
-	this->attack = 1;
-	this->defence = 1;
+	this->attack = attack;
+	this->defence = defence;
 }
 
 
@@ -63,4 +72,13 @@ void Player::showStats()
 	std::cout << "Attack = " << this->attack << std::endl;
 	std::cout << "Defence = " << this->defence << std::endl;
 	std::cout << std::endl;
+}
+
+void Player::setPlayer(std::string name, int maxHealth, int attack, int defence)
+{
+	this->name = name;
+	this->maxHealth = maxHealth;
+	this->attack = attack;
+	this->defence = defence;
+	initialise(name);
 }

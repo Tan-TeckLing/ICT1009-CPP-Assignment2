@@ -17,7 +17,7 @@ public:
 		);
 		virtual ~Weapon();
 
-	virtual Weapon* clone()const;
+	virtual Weapon* clone()const override;
 
 	std::string toString();
 
