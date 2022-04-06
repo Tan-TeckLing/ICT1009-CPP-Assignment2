@@ -8,7 +8,7 @@ class Item
 {
 public:
 
-	virtual void generateName() = 0;
+	//virtual void generateName() = 0;
 
 	void setItemType(ItemType);
 	ItemType getItemType();
