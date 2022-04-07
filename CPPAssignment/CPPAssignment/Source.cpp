@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-
 #include "Player.h"
 #include "ScenarioSystem.h"
 
@@ -50,16 +49,16 @@ void classSelect(int& c, Player& p) {
 	{
 	case 1:
 		cout << "You have chosen the durable Knight!" << endl;
-		return p.setPlayer(name, 6, 2, 4); //stats are by maxHp, attack, defence
+		return p.classSelect(name, 6, 2, 4); //stats are by maxHp, attack, defence
 	case 2:
 		cout << "You have chosen the dangerous Rogue!" << endl;
-		return p.setPlayer(name, 6, 4, 2);
+		return p.classSelect(name, 6, 4, 2);
 	case 3:
 		cout << "You have chosen the ruthless Berzerker!" << endl;
-		return p.setPlayer(name, 4, 7, 1);
+		return p.classSelect(name, 4, 7, 1);
 	default:
 		cout << "You have chosen the ruthless Adventurer!" << endl;
-		return p.setPlayer(name, 4, 4, 4);
+		return p.classSelect(name, 4, 4, 4);
 	}
 	cout << endl;
 }
