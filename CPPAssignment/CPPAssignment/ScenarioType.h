@@ -3,10 +3,11 @@
 
 enum class ScenarioType
 {
-	JUNCTION,
 	TREASURE,
 	MONSTER,
+	JUNCTION,
 	EMPTY,
+	GAMEOVER,
 	NUM_SCENARIOTYPE
 }; 
 

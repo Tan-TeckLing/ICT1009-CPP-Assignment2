@@ -2,6 +2,7 @@
 #define STATS_H
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -25,6 +26,7 @@ public:
 	void setAttack(int);
 	int getAttack();
 
+	friend ostream& operator<<(ostream&, const Stats);
 private:
 	int currentHealth;
 	int maxHealth;
