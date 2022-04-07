@@ -113,7 +113,7 @@ int MonsterEncounter::checkDecisionInput(string decisionInput)
 
 		return 2;
 	}
-	else if (decisionInput == "stat")
+	else if (decisionInput == "stats")
 	{
 		cout << "You are viewing stats" << endl;
 
