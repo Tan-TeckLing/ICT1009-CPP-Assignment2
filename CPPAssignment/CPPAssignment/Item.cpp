@@ -1,5 +1,12 @@
 #include "Item.h"
 
+
+Item::Item(std::string name, int level)
+{
+	this->name = name;
+	this->level = level;
+}
+
 void Item::setItemType(ItemType itemType)
 {
 	this->itemType = itemType;
@@ -29,3 +36,4 @@ string Item::getInformation()
 {
 	return this->information;
 }
+

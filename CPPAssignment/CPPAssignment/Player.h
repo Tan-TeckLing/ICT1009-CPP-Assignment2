@@ -1,43 +1,48 @@
 #pragma once
 
 #include "Inventory.h"
+#include "Entity.h"
+#include "Stats.h"
+
 #include <iostream>
 
 
-class Player
+class Player : public Stats, public Entity
 {
 private:
-	std::string name;
 	int level;
-	int exp;
-	int expNext;
-	int maxHealth;
-	int health;
-	int attack;
-	int defence;
+	double exp;
+	double expNext;
 	double xPos;
 	double yPos;
+	Stats stats;
+	Entity entity;
 
 public:
 	Player();
+	Player(double exp, double expNext, double xPos, double yPos);
 	virtual ~Player();
 
 	//Functions
-	void initialise(std::string name);
+	//void initialise(std::string name);
 	void levelUp();
 	void showStats();
+	void classSelect(std::string name, int maxHealth, int attack, int defence);
 
 
 	//Accessors
-	inline const std::string& getName() const { return this->name; }
 	inline const int& getLevel() const { return this->level; }
-	inline const int& getExp() const { return this->exp; }
-	inline const int& getExpNext() const { return this->expNext; }
-	inline const int& getMaxHealth() const { return this->maxHealth; }
-	inline const int& getHealth() const { return this->health; }
-	inline const int& getAttack() const { return this->attack; }
-	inline const int& getDefence() const { return this->defence; }
+	inline const double& getExp() const { return this->exp; }
+	inline const double& getExpNext() const { return this->expNext; }
 	inline const double& getX() const { return this->xPos; }
 	inline const double& getY() const { return this->yPos; }
+
+	//Stats
+	void setStat(Stats);
+	Stats getStat();
+
+	//Entity
+	void setEntity(Entity);
+	Entity getEntity();
 };
 

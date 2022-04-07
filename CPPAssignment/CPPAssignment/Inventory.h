@@ -1,6 +1,8 @@
 #pragma once
 
-#include "Item.h"
+#include <iostream>
+#include "Weapon.h"
+#include "Armour.h"
 
 class Inventory
 {
@@ -9,11 +11,18 @@ private:
 	int noOfItems;
 	Item **itemArray;
 	void expand();
-	void initialise(const int from);
+	void initialise(const int from = 0);
 public:
 	Inventory();
 	~Inventory();
 	void addItem(const Item& item);
-	void removeItem(int index);
+
+	inline void debugPrint() const
+	{
+		for (size_t i = 0; i < this->noOfItems; i++)
+		{
+			std::cout << this->itemArray[i]->debugPrint() << std::endl;
+		}
+	}
 };
 
