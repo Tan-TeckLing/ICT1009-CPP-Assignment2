@@ -2,25 +2,27 @@
 
 #include "Item.h"
 
-class Armour :
-	public Item
+class Armour : public Item
 {
 private:
 	int type;
-	int defence;
+	Stats stats;
 
 public:
-	Armour(
-		int type = 0,
-		int defence = 0,
-		std::string name = "NONE",
-		int level = 0
-	);
+	Armour();
 	virtual ~Armour();
 
 	//Pure virtual
 	virtual Armour* clone()const override;
 
 	//Functions
-	std::string toString()const;
+	std::string toString();
+	void setStats(std::string name, int defence);
+
+	//Accessors
+	inline const int& getType() const { return this->type; }
+
+	//Stats
+	void setStat(Stats);
+	Stats getStat();
 };

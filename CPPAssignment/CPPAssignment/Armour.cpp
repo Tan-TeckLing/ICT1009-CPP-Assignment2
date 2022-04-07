@@ -1,12 +1,10 @@
 #include "Armour.h"
 
-
-Armour::Armour(int type, int defence, std::string name, int level)
-	:Item(name, level)
+Armour::Armour()
 {
-	this->type = type;
-	this->defence = defence;
+	this->type = 0;
 }
+
 
 Armour::~Armour()
 {
@@ -18,13 +16,29 @@ Armour* Armour::clone()const
 	return new Armour(*this);
 }
 
-std::string Armour::toString()const
+std::string Armour::toString()
 {
 	std::string str =
 		+" | Type: "
 		+ this->type;
 		+ " | Def: "
-		+ std::to_string(this->defence);
+		+ std::to_string(this->stats.getDefence());
 
 	return str;
+}
+
+void Armour::setStats(std::string name, int defence)
+{
+	this->stats.setName(name);
+	this->stats.setDefence(defence);
+}
+
+void Armour::setStat(Stats stats)
+{
+	this->stats = stats;
+}
+
+Stats Armour::getStat()
+{
+	return this->stats;
 }
