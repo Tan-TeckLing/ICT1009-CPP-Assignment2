@@ -4,6 +4,7 @@
 #include "Scenario.h"
 #include "ScenarioSystem.h"
 #include "Monster.h"
+#include "Player.h"
 
 class MonsterEncounter : public Scenario
 {
@@ -15,6 +16,7 @@ public:
 	int checkDecisionInput(string);
 private:
 	Monster* monster;
+	Player player;
 };
 
 #endif // !MONSTERENCOUNTER_H

@@ -31,7 +31,7 @@ void MonsterEncounter::scenarioUpdate()
 		switch (checkDecisionInput(decisionInput))
 		{
 		case 0:
-			this->monster->getStat()->takeDamage(1);
+			this->monster->getStat()->takeDamage(this->player->getStat()->getAttack());
 			cout << "You dealt 1 damage to the monster!" << endl;
 			if (this->monster->getStat()->getCurrentHealth() == 0)
 			{

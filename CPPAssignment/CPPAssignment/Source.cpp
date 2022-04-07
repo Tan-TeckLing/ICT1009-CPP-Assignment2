@@ -82,7 +82,7 @@ int main()
 	}
 
 
-	cout << "You better move fast, " << player.getName() << ". The goblins are attacking the city." << endl;
+	cout << "You better move fast, " << player.getStat().getName() << ". The goblins are attacking the city." << endl;
 	cout << "\n----------------------Press any key to continue----------------------" << endl;
 	_getch();
 

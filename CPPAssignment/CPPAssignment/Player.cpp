@@ -4,18 +4,12 @@ Player::Player()
 {
 	level = 1;
 	exp = 0;
-	expNext = 
-		(50/3)*(pow(level,3) -
-		6*pow(level,3) +
-		(17*level) - 11);
-	xPos = 0;
-	yPos = 0;
+	expNext =
+		(50 / 3) * (pow(level, 3) -
+			6 * pow(level, 3) +
+			(17 * level) - 11);
 }
 
-Player::Player(double exp, double expNext, double xPos, double yPos)
-{
-
-}
 
 Player::~Player()
 {
@@ -33,8 +27,8 @@ void Player::levelUp()
 		this->level++;
 		this->expNext =
 			(50 / 3) * (pow(level, 3) -
-			6 * pow(level, 3) +
-			(17 * level) - 11);
+				6 * pow(level, 3) +
+				(17 * level) - 11);
 
 		this->stats.setMaxHealth(stats.getMaxHealth() + 2);
 		this->stats.setCurrentHealth(stats.getMaxHealth());
@@ -43,18 +37,6 @@ void Player::levelUp()
 	}
 }
 
-void Player::showStats()
-{
-	std::cout << "~Player Statistics~" << std::endl;
-	std::cout << "Name = " << this->stats.getName() << std::endl;
-	std::cout << "Level = " << this->level << std::endl;
-	std::cout << "Exp = " << this->exp << std::endl;
-	std::cout << "Exp to level up = " << this->expNext << std::endl;
-	std::cout << "Health = " << this->stats.getCurrentHealth() << "/" << Stats::getMaxHealth() << std::endl;
-	std::cout << "Attack = " << this->stats.getAttack() << std::endl;
-	std::cout << "Defence = " << this->stats.getDefence() << std::endl;
-	std::cout << std::endl;
-}
 
 void Player::classSelect(std::string name, int maxHealth, int attack, int defence)
 {
@@ -81,4 +63,10 @@ void Player::setEntity(Entity entity)
 Entity Player::getEntity()
 {
 	return this->entity;
+}
+
+ostream& operator<<(ostream& out, Player player)
+{
+	out << "Player\n" << player.getStat() << endl;
+	return out;
 }
