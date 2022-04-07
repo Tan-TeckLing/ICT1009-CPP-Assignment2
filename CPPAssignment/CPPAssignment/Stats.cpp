@@ -77,3 +77,14 @@ int Stats::getAttack()
 {
 	return this->attack;
 }
+
+
+ostream& operator<<(ostream& out, Stats stat)
+{
+	out << "Name: " << stat.getName() << "\n"
+		<< "Health: " << stat.getCurrentHealth() << "/" << stat.getMaxHealth() << "\n"
+		<< "Attack: " << stat.getAttack() << "\n"
+		<< "Defence: " << stat.getDefence() << "\n";
+
+	return out;
+}
