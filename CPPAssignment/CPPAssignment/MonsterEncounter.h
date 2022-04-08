@@ -4,7 +4,6 @@
 #include "Scenario.h"
 #include "ScenarioSystem.h"
 #include "Monster.h"
-#include "Player.h"
 
 class MonsterEncounter : public Scenario
 {

@@ -55,6 +55,23 @@ void MonsterEncounter::scenarioUpdate()
 			break;
 		case 1:
 			cout << "You have used an item." << endl;
+			cout << "You have healed " << ((gameSystem->player->getStat()->getMaxHealth()) / 2) << " hp." << endl;
+			int rHealth;
+			rHealth = gameSystem->player->getStat()->getCurrentHealth() + ((gameSystem->player->getStat()->getMaxHealth()) / 2);
+			if (rHealth > gameSystem->player->getStat()->getMaxHealth())
+			{
+				gameSystem->player->getStat()->setCurrentHealth(gameSystem->player->getStat()->getMaxHealth());
+			}
+			else
+			{
+				gameSystem->player->getStat()->setCurrentHealth(rHealth);
+			}
+
+			cout << "You took " << ((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) <= 0 ? 0 : 0) << " damage from the monster!" << endl;
+			if ((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) > 0)
+			{
+				gameSystem->player->getStat()->setCurrentHealth((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()));
+			}
 			/*
 			*	Player heals
 			*/

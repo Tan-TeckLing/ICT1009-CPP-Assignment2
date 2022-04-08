@@ -9,9 +9,9 @@ public:
 	~GameSystem();
 
 	Player* player;
+	Inventory* inventory;
 
 private:
-	// Player
 
 };
 

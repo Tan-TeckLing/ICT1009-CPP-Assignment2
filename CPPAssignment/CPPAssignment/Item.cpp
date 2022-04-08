@@ -36,3 +36,8 @@ string Item::getInformation()
 	return this->information;
 }
 
+void Item::generateItem()
+{
+	cout << "Sike! No item for you!" << endl;
+}
+

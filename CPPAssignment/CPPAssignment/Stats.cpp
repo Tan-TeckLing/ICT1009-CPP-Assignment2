@@ -78,7 +78,7 @@ int Stats::getAttack()
 	return this->attack;
 }
 
-int Stats::setHeal(int heal)
+void Stats::setHeal(int heal)
 {
 	this->heal = heal;
 }

@@ -14,7 +14,7 @@ public:
 	Stats getStat();
 	void setInformation(string);
 	string getInformation();
-
+	void generateItem();
 
 	Item(std::string name = "NONE");
 

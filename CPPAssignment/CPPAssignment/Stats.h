@@ -25,7 +25,7 @@ public:
 	int getDefence();
 	void setAttack(int);
 	int getAttack();
-	int setHeal(int);
+	void setHeal(int);
 	int getHeal();
 
 	friend ostream& operator<<(ostream&, const Stats);

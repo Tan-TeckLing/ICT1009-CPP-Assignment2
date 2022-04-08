@@ -43,6 +43,33 @@ void TreasureEncounter::scenarioUpdate()
 		case 2:
 			cout << "As you opened the treasure chest, you have found a new item!" << endl;
 
+		switch (rand() % 3)
+		{
+		case 0:
+			cout << "You found a Weapon!" << endl;
+			this->item = new Weapon();
+			this->item->generateItem();
+			gameSystem->inventory->addItem(this->item);
+			cout << "Attack increased by " << item->getStat().getAttack() << "!" << endl;
+			gameSystem->player->getStat()->setCurrentHealth(gameSystem->player->getStat()->getAttack() + item->getStat().getAttack());
+			break;
+		case 1:
+			cout << "You found Armour!" << endl;
+			this->item = new Armour();
+			this->item->generateItem();
+			gameSystem->inventory->addItem(this->item);
+			cout << "Defence increased by " << item->getStat().getDefence() << "!" << endl;
+			gameSystem->player->getStat()->setDefence(gameSystem->player->getStat()->getDefence() + item->getStat().getDefence());
+			break;
+		case 2:
+			cout << "You found a Consumable" << endl;
+			//this->item = new Consumable();
+			//this->item->generateItem();
+			//gameSystem->inventory->addItem(this->item);
+			// cout << "Health recovered by " << item->getStat().getHeal() << "!" << endl;
+			//gameSystem->player->getStat()->setCurrentHealth(gameSystem->player->getStat()->getCurrentHealth() + item->getStat().getHeal());
+			break;
+		}
 			/* 
 				Generate new item 
 			*/

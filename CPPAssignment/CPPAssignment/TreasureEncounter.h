@@ -14,7 +14,7 @@ public:
 	int checkDecisionInput(string);
 
 private:
-
+	Item* item;
 };
 
 
