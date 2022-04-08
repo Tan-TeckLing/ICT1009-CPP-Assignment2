@@ -1,10 +1,9 @@
 #include "Item.h"
 
 
-Item::Item(std::string name, int level)
+Item::Item(std::string name)
 {
 	this->name = name;
-	this->level = level;
 }
 
 void Item::setItemType(ItemType itemType)
@@ -17,12 +16,12 @@ ItemType Item::getItemType()
 	return this->itemType;
 }
 
-void Item::setStat(Stats stats)
+void Item::setStat(Stats* stats)
 {
 	this->stats = stats;
 }
 
-Stats Item::getStat()
+Stats* Item::getStat()
 {
 	return this->stats;
 }

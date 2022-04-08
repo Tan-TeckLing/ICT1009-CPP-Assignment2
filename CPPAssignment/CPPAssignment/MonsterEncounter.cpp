@@ -31,23 +31,47 @@ void MonsterEncounter::scenarioUpdate()
 		switch (checkDecisionInput(decisionInput))
 		{
 		case 0:
-			this->monster->getStat()->takeDamage(1);
-			cout << "You dealt 1 damage to the monster!" << endl;
+			this->monster->getStat()->takeDamage(gameSystem->player->getStat()->getAttack());
+			cout << "You dealt " << gameSystem->player->getStat()->getAttack() << " damage to the monster!" << endl;
 			if (this->monster->getStat()->getCurrentHealth() == 0)
 			{
 				cout << "The monster has died and collapsed onto the floor." << endl;
 				this->sceneClear = true;
+				cout << "You gained " << this->monster->getPoints() << " Experience points!" << endl;
+				gameSystem->player->setExp(this->monster->getPoints());
+
 				break;
 			}
-			cout << "You took 1 damage from the monster!" << endl;
+			cout << "You took " << ((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) <= 0 ? 0 : 0) << " damage from the monster!" << endl;
 			/*
 			*	Player take hp damage
 			*	if player hp == 0, cout flavour text and this->sceneClear = true;
 			*/
+			if ((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) > 0 )
+			{
+				gameSystem->player->getStat()->setCurrentHealth((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()));
+			}
 
 			break;
 		case 1:
 			cout << "You have used an item." << endl;
+			cout << "You have healed " << ((gameSystem->player->getStat()->getMaxHealth()) / 2) << " hp." << endl;
+			int rHealth;
+			rHealth = gameSystem->player->getStat()->getCurrentHealth() + ((gameSystem->player->getStat()->getMaxHealth()) / 2);
+			if (rHealth > gameSystem->player->getStat()->getMaxHealth())
+			{
+				gameSystem->player->getStat()->setCurrentHealth(gameSystem->player->getStat()->getMaxHealth());
+			}
+			else
+			{
+				gameSystem->player->getStat()->setCurrentHealth(rHealth);
+			}
+
+			cout << "You took " << ((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) <= 0 ? 0 : 0) << " damage from the monster!" << endl;
+			if ((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) > 0)
+			{
+				gameSystem->player->getStat()->setCurrentHealth((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()));
+			}
 			/*
 			*	Player heals
 			*/
@@ -66,6 +90,11 @@ void MonsterEncounter::scenarioUpdate()
 				*	Player take hp damage
 				*	if player hp == 0, cout flavour text and this->sceneClear = true;
 				*/
+				if ((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) > 0)
+				{
+					gameSystem->player->getStat()->setCurrentHealth((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()));
+				}
+
 				escape = false;
 				break;
 			}
@@ -74,6 +103,10 @@ void MonsterEncounter::scenarioUpdate()
 			cout << "You are viewing the Monster's stats" << endl;
 			cout << *this->monster << endl;
 			cout << "You are viewing your stats" << endl;
+			cout << *gameSystem->player << endl;
+			cout << "Level: " << gameSystem->player->getLevel() << endl;
+			cout << "Exp: " << gameSystem->player->getExp() << endl;
+			cout << "Exp to next level: " << gameSystem->player->getExpNext() << endl;
 			/*
 			*	cout player's stat
 			*/
@@ -113,7 +146,7 @@ int MonsterEncounter::checkDecisionInput(string decisionInput)
 
 		return 2;
 	}
-	else if (decisionInput == "stat")
+	else if (decisionInput == "stats")
 	{
 		cout << "You are viewing stats" << endl;
 

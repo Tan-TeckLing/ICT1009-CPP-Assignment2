@@ -1,6 +1,6 @@
 #ifndef GAMESYSTEM_H
 #define GAMESYSTEM_H
-
+#include "Player.h"
 
 class GameSystem
 {
@@ -8,10 +8,11 @@ public:
 	GameSystem();
 	~GameSystem();
 
-	int playerHealth;
+	Player* player;
+	Inventory* inventory;
 
 private:
-	// Player
+
 };
 
 extern GameSystem* gameSystem;

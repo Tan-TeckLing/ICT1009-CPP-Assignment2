@@ -2,15 +2,15 @@
 
 #include "Item.h"
 
-class Weapon : public Item
+class Consumable : public Item
 {
 private:
 
 public:
-	Weapon();
-		virtual ~Weapon();
+	Consumable();
+		virtual ~Consumable();
 
 	virtual void generateItem();
 
-
 };
+

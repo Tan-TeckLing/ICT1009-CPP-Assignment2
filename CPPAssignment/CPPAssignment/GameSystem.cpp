@@ -5,7 +5,8 @@ GameSystem* gameSystem = new GameSystem();
 
 GameSystem::GameSystem()
 {
-	this->playerHealth = 10;
+	this->player = new Player();
+	this->inventory = new Inventory();
 }
 
 GameSystem::~GameSystem()

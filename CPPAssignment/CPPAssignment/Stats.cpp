@@ -7,6 +7,7 @@ Stats::Stats()
 	this->name = "";
 	this->defence = 0;
 	this->attack = 1;
+	this->heal = 0;
 }
 
 Stats::Stats(int currentHealth, int maxHealth, string name, int defence, int attack)
@@ -76,6 +77,16 @@ void Stats::setAttack(int attack)
 int Stats::getAttack()
 {
 	return this->attack;
+}
+
+void Stats::setHeal(int heal)
+{
+	this->heal = heal;
+}
+
+int Stats::getHeal()
+{
+	return this->heal;
 }
 
 

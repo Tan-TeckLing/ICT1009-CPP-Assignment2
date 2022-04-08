@@ -31,7 +31,7 @@ void menu(int &c)
 	cout << endl;
 }
 
-void classSelect(int& c, Player& p) {
+void classSelect(int& c) {
 	std::string name;
 
 	cout << "What is your name, warrior?" << endl;
@@ -49,16 +49,16 @@ void classSelect(int& c, Player& p) {
 	{
 	case 1:
 		cout << "You have chosen the durable Knight!" << endl;
-		return p.classSelect(name, 6, 2, 4); //stats are by maxHp, attack, defence
+		return gameSystem->player->classSelect(name, 6, 2, 4); //stats are by maxHp, attack, defence
 	case 2:
 		cout << "You have chosen the dangerous Rogue!" << endl;
-		return p.classSelect(name, 6, 4, 2);
+		return gameSystem->player->classSelect(name, 6, 4, 2);
 	case 3:
 		cout << "You have chosen the ruthless Berzerker!" << endl;
-		return p.classSelect(name, 4, 7, 1);
+		return gameSystem->player->classSelect(name, 4, 7, 1);
 	default:
 		cout << "You have chosen the ruthless Adventurer!" << endl;
-		return p.classSelect(name, 4, 4, 4);
+		return gameSystem->player->classSelect(name, 4, 4, 4);
 	}
 	cout << endl;
 }
@@ -66,7 +66,6 @@ void classSelect(int& c, Player& p) {
 
 int main()
 {	
-	Player player;
 
 	int choice = 0;
 
@@ -78,17 +77,15 @@ int main()
 	}
 	else
 	{
-		classSelect(choice, player);
+		classSelect(choice);
 	}
 
 
-	cout << "You are now entering the dungeon, " << player.getName() << ". All the best for your journey." << endl;
+	cout << "You better move fast, " << gameSystem->player->getStat()->getName() << ". The goblins are attacking the city." << endl;
 	cout << "\n----------------------Press any key to continue----------------------" << endl;
 	_getch();
 
 	scenarioSystem->newScenario();
-	scenarioSystem->currentScenario->scenarioUpdate();
-	scenarioSystem->currentScenario->scenarioUpdate();
 
 	return 0;
 }

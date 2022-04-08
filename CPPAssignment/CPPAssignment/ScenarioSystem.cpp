@@ -13,7 +13,7 @@ ScenarioSystem::~ScenarioSystem()
 void ScenarioSystem::newScenario()
 {
 	this->pastScenario.push_back(this->currentScenario);
-	if (gameSystem->playerHealth > 0)
+	if (gameSystem->player->getStat()->getCurrentHealth() > 0)
 	{
 		switch (rand() % (int)ScenarioType::NUM_SCENARIOTYPE)
 		{
@@ -33,7 +33,7 @@ void ScenarioSystem::newScenario()
 			this->currentScenario = new Empty(this->pastScenario.size());
 			break;
 		}
-		gameSystem->playerHealth -= 1;
+		gameSystem->player->getStat()->setCurrentHealth(gameSystem->player->getStat()->getCurrentHealth());
 	}
 	else
 	{

@@ -2,7 +2,7 @@
 
 Weapon::Weapon()
 {
-	this->type = 0;
+	this->setStat(new Stats());
 }
 
 
@@ -11,34 +11,30 @@ Weapon::~Weapon()
 
 }
 
-Weapon* Weapon::clone()const
-{
-	return new Weapon(*this);
-}
 
-std::string Weapon::toString()
+void Weapon::generateItem()
 {
-	std::string str =
-		+" | Type: "
-		+ this->type;
-		+" | Attack: "
-		+ std::to_string(this->stats.getAttack());
-
-	return str;
-}
-
-void Weapon::setStats(std::string name, int attack)
-{
-	this->stats.setName(name);
-	this->stats.setAttack(attack);
-}
-
-void Weapon::setStat(Stats stats)
-{
-	this->stats = stats;
-}
-
-Stats Weapon::getStat()
-{
-	return this->stats;
+	switch (rand() % 3)
+	{
+	case 0:
+		cout << "You found a Dagger with +2 Attack!" << endl;
+		this->getStat()->setName("Dagger");
+		this->getStat()->setAttack(2);
+			break;
+	case 1:
+		cout << "You found a Sword with +4 Attack!" << endl;
+		this->getStat()->setName("Sword");
+		this->getStat()->setAttack(4);
+			break;
+	case 2:
+		cout << "You found a Rapier with +6 Attack!" << endl;
+		this->getStat()->setName("Rapier");
+		this->getStat()->setAttack(6);
+			break;
+	default:
+		cout << "You found a Knife with +1 Attack!" << endl;
+		this->getStat()->setName("Knife");
+		this->getStat()->setAttack(1);
+			break;
+	}
 }

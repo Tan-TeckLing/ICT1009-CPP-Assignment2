@@ -25,6 +25,8 @@ public:
 	int getDefence();
 	void setAttack(int);
 	int getAttack();
+	void setHeal(int);
+	int getHeal();
 
 	friend ostream& operator<<(ostream&, const Stats);
 private:
@@ -33,6 +35,7 @@ private:
 	string name;
 	int defence;
 	int attack;
+	int heal;
 };
 
 #endif // !STATS_H
