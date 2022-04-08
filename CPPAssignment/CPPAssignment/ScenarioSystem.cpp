@@ -33,7 +33,7 @@ void ScenarioSystem::newScenario()
 			this->currentScenario = new Empty(this->pastScenario.size());
 			break;
 		}
-		gameSystem->player->getStat()->setCurrentHealth(gameSystem->player->getStat()->getCurrentHealth() - 1);
+		gameSystem->player->getStat()->setCurrentHealth(gameSystem->player->getStat()->getCurrentHealth());
 	}
 	else
 	{

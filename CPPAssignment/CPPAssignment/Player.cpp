@@ -48,6 +48,11 @@ void Player::classSelect(std::string name, int maxHealth, int attack, int defenc
 	this->getStat()->setDefence(defence);
 }
 
+double Player::setExp(double exp)
+{
+	return this->exp = exp;
+}
+
 ostream& operator<<(ostream& out, Player player)
 {
 	out << "Player\n" << *player.getStat() << endl;

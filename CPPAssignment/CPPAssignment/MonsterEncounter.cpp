@@ -37,6 +37,9 @@ void MonsterEncounter::scenarioUpdate()
 			{
 				cout << "The monster has died and collapsed onto the floor." << endl;
 				this->sceneClear = true;
+				cout << "You gained " << this->monster->getPoints() << " Experience points!" << endl;
+				gameSystem->player->setExp(this->monster->getPoints());
+
 				break;
 			}
 			cout << "You took "<< (this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) << " damage from the monster!" << endl;
@@ -44,6 +47,10 @@ void MonsterEncounter::scenarioUpdate()
 			*	Player take hp damage
 			*	if player hp == 0, cout flavour text and this->sceneClear = true;
 			*/
+			if ((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) > 0 )
+			{
+				gameSystem->player->getStat()->setCurrentHealth((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()));
+			}
 
 			break;
 		case 1:
@@ -66,6 +73,11 @@ void MonsterEncounter::scenarioUpdate()
 				*	Player take hp damage
 				*	if player hp == 0, cout flavour text and this->sceneClear = true;
 				*/
+				if ((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) > 0)
+				{
+					gameSystem->player->getStat()->setCurrentHealth((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()));
+				}
+
 				escape = false;
 				break;
 			}
@@ -75,6 +87,9 @@ void MonsterEncounter::scenarioUpdate()
 			cout << *this->monster << endl;
 			cout << "You are viewing your stats" << endl;
 			cout << *gameSystem->player << endl;
+			cout << "Level: " << gameSystem->player->getLevel() << endl;
+			cout << "Exp: " << gameSystem->player->getExp() << endl;
+			cout << "Exp to next level: " << gameSystem->player->getExpNext() << endl;
 			/*
 			*	cout player's stat
 			*/

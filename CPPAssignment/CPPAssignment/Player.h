@@ -23,6 +23,8 @@ public:
 	void classSelect(std::string name, int maxHealth, int attack, int defence);
 	friend ostream& operator<<(ostream&, const Player);
 
+	double setExp(double exp);
+
 	//Accessors
 	inline const int& getLevel() const { return this->level; }
 	inline const double& getExp() const { return this->exp; }
