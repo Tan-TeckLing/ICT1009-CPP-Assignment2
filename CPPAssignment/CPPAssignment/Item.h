@@ -6,6 +6,7 @@ class Item
 {
 public:
 
+	Item(std::string name = "NONE");
 	//virtual void generateName() = 0;
 
 	void setItemType(ItemType);
@@ -16,7 +17,6 @@ public:
 	string getInformation();
 	virtual void generateItem() = 0;
 
-	Item(std::string name = "NONE");
 
 	inline std::string debugPrint() const {
 		return this->name;

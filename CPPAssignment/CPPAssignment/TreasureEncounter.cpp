@@ -52,7 +52,7 @@ void TreasureEncounter::scenarioUpdate()
 			this->item->generateItem();
 			gameSystem->inventory->addItem(this->item);
 			cout << "Attack increased by " << this->item->getStat()->getAttack() << "!" << endl;
-			gameSystem->player->getStat()->setCurrentHealth(gameSystem->player->getStat()->getAttack() + this->item->getStat()->getAttack());
+			gameSystem->player->getStat()->setAttack(gameSystem->player->getStat()->getAttack() + this->item->getStat()->getAttack());
 			break;
 		case 1:
 			cout << "You found Armour!" << endl;

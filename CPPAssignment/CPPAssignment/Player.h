@@ -12,7 +12,6 @@ private:
 	int level;
 	double exp;
 	double expNext;
-	Entity entity;
 
 public:
 	Player();

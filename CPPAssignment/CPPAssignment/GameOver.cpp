@@ -22,5 +22,5 @@ void GameOver::scenarioUpdate()
 	cout << "\n----------------------Press any key to continue----------------------\n" << endl;
 	_getch();
 
-	scenarioSystem->newScenario();
+	exit(1);
 }
