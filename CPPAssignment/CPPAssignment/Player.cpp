@@ -2,6 +2,7 @@
 
 Player::Player()
 {
+	this->setStat(new Stats());
 	level = 1;
 	exp = 0;
 	expNext =
@@ -30,43 +31,24 @@ void Player::levelUp()
 				6 * pow(level, 3) +
 				(17 * level) - 11);
 
-		this->stats.setMaxHealth(stats.getMaxHealth() + 2);
-		this->stats.setCurrentHealth(stats.getMaxHealth());
-		this->stats.setAttack(stats.getAttack() + 2);
-		this->stats.setDefence(stats.getDefence() + 2);
+		this->getStat()->setMaxHealth(this->getStat()->getMaxHealth() + 2);
+		this->getStat()->setCurrentHealth(this->getStat()->getMaxHealth());
+		this->getStat()->setAttack(this->getStat()->getAttack() + 2);
+		this->getStat()->setDefence(this->getStat()->getDefence() + 2);
 	}
 }
 
 
 void Player::classSelect(std::string name, int maxHealth, int attack, int defence)
 {
-	this->stats.setName(name);
-	this->stats.setMaxHealth(maxHealth);
-	this->stats.setAttack(attack);
-	this->stats.setDefence(defence);
-}
-void Player::setStat(Stats stats)
-{
-	this->stats = stats;
-}
-
-Stats Player::getStat()
-{
-	return this->stats;
-}
-
-void Player::setEntity(Entity entity)
-{
-	this->entity = entity;
-}
-
-Entity Player::getEntity()
-{
-	return this->entity;
+	this->getStat()->setName(name);
+	this->getStat()->setMaxHealth(maxHealth);
+	this->getStat()->setAttack(attack);
+	this->getStat()->setDefence(defence);
 }
 
 ostream& operator<<(ostream& out, Player player)
 {
-	out << "Player\n" << player.getStat() << endl;
+	out << "Player\n" << *player.getStat() << endl;
 	return out;
 }

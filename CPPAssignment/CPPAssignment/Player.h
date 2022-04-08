@@ -12,7 +12,6 @@ private:
 	int level;
 	double exp;
 	double expNext;
-	Stats stats;
 	Entity entity;
 
 public:
@@ -27,12 +26,4 @@ public:
 	inline const int& getLevel() const { return this->level; }
 	inline const double& getExp() const { return this->exp; }
 	inline const double& getExpNext() const { return this->expNext; }
-
-	//Stats
-	void setStat(Stats);
-	Stats getStat();
-
-	//Entity
-	void setEntity(Entity);
-	Entity getEntity();
 };
