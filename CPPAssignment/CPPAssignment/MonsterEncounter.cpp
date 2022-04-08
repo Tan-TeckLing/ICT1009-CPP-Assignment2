@@ -42,7 +42,7 @@ void MonsterEncounter::scenarioUpdate()
 
 				break;
 			}
-			cout << "You took "<< (this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) << " damage from the monster!" << endl;
+			cout << "You took " << ((this->monster->getStat()->getAttack() - gameSystem->player->getStat()->getDefence()) <= 0 ? 0 : 0) << " damage from the monster!" << endl;
 			/*
 			*	Player take hp damage
 			*	if player hp == 0, cout flavour text and this->sceneClear = true;
