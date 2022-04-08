@@ -11,10 +11,7 @@ Armour::~Armour()
 
 }
 
-Armour* Armour::clone()const
-{
-	return new Armour(*this);
-}
+
 
 std::string Armour::toString()
 {

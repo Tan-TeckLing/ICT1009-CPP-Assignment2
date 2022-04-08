@@ -1,6 +1,3 @@
-#ifndef ITEM_H
-#define ITEM_H
-
 #pragma once
 #include "Stats.h"
 #include "ItemType.h"
@@ -17,9 +14,9 @@ public:
 	Stats getStat();
 	void setInformation(string);
 	string getInformation();
-	virtual Item* clone()const = 0;
 
-	Item(std::string name = "NONE", int level = 0);
+
+	Item(std::string name = "NONE");
 
 	inline std::string debugPrint() const {
 		return this->name;
@@ -32,5 +29,3 @@ private:
 	Stats stats;
 	string information;
 };
-
-#endif // !ITEM_H

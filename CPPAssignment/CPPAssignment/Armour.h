@@ -12,9 +12,6 @@ public:
 	Armour();
 	virtual ~Armour();
 
-	//Pure virtual
-	virtual Armour* clone()const override;
-
 	//Functions
 	std::string toString();
 	void setStats(std::string name, int defence);

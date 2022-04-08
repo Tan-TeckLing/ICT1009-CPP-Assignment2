@@ -10,8 +10,7 @@ private:
 public:
 	Weapon();
 		virtual ~Weapon();
-	//Pure virtual
-	virtual Weapon* clone()const override;
+
 
 	//Functions
 	std::string toString();
