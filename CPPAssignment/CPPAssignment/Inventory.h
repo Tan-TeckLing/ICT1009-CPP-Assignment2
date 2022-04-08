@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Weapon.h"
 #include "Armour.h"
+#include "Consumable.h"
 #include <vector>
 
 using namespace std;

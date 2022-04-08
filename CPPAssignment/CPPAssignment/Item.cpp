@@ -16,12 +16,12 @@ ItemType Item::getItemType()
 	return this->itemType;
 }
 
-void Item::setStat(Stats stats)
+void Item::setStat(Stats* stats)
 {
 	this->stats = stats;
 }
 
-Stats Item::getStat()
+Stats* Item::getStat()
 {
 	return this->stats;
 }
@@ -34,10 +34,5 @@ void Item::setInformation(string information)
 string Item::getInformation()
 {
 	return this->information;
-}
-
-void Item::generateItem()
-{
-	cout << "Sike! No item for you!" << endl;
 }
 

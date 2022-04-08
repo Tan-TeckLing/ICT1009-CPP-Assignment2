@@ -10,5 +10,5 @@ public:
 	Armour();
 	virtual ~Armour();
 
-	void generateItem();
+	virtual void generateItem();
 };

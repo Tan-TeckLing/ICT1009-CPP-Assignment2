@@ -10,7 +10,7 @@ public:
 	Weapon();
 		virtual ~Weapon();
 
-	void generateItem();
+	virtual void generateItem();
 
 
 };

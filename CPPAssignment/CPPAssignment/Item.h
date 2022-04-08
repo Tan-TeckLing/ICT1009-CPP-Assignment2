@@ -10,11 +10,11 @@ public:
 
 	void setItemType(ItemType);
 	ItemType getItemType();
-	void setStat(Stats);
-	Stats getStat();
+	void setStat(Stats*);
+	Stats* getStat();
 	void setInformation(string);
 	string getInformation();
-	void generateItem();
+	virtual void generateItem() = 0;
 
 	Item(std::string name = "NONE");
 
@@ -26,6 +26,6 @@ private:
 	std::string name;
 	int level;
 	ItemType itemType;
-	Stats stats;
+	Stats* stats;
 	string information;
 };

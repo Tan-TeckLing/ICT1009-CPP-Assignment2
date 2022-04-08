@@ -10,7 +10,7 @@ public:
 	Consumable();
 		virtual ~Consumable();
 
-	void generateItem();
+	virtual void generateItem();
 
 };
 
