@@ -27,3 +27,5 @@ public:
 	inline const double& getExp() const { return this->exp; }
 	inline const double& getExpNext() const { return this->expNext; }
 };
+
+extern Player* player;

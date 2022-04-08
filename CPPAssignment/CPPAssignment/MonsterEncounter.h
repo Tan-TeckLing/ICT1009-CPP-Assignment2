@@ -16,7 +16,6 @@ public:
 	int checkDecisionInput(string);
 private:
 	Monster* monster;
-	Player player;
 };
 
 #endif // !MONSTERENCOUNTER_H

@@ -1,5 +1,7 @@
 #include "Player.h"
 
+Player* player = new Player();
+
 Player::Player()
 {
 	this->setStat(new Stats());

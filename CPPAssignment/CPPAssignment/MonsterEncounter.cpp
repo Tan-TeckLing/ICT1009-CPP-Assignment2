@@ -31,15 +31,15 @@ void MonsterEncounter::scenarioUpdate()
 		switch (checkDecisionInput(decisionInput))
 		{
 		case 0:
-			this->monster->getStat()->takeDamage(1);
-			cout << "You dealt 1 damage to the monster!" << endl;
+			this->monster->getStat()->takeDamage(player->getStat()->getAttack());
+			cout << "You dealt " << player->getStat()->getAttack() << " damage to the monster!" << endl;
 			if (this->monster->getStat()->getCurrentHealth() == 0)
 			{
 				cout << "The monster has died and collapsed onto the floor." << endl;
 				this->sceneClear = true;
 				break;
 			}
-			cout << "You took 1 damage from the monster!" << endl;
+			cout << "You took "<< (this->monster->getStat()->getAttack()-player->getStat()->getDefence()) << " damage from the monster!" << endl;
 			/*
 			*	Player take hp damage
 			*	if player hp == 0, cout flavour text and this->sceneClear = true;
