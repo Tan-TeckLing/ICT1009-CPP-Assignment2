@@ -19,23 +19,31 @@ std::string Armour::toString()
 		+" | Type: "
 		+ this->type;
 		+ " | Def: "
-		+ std::to_string(this->stats.getDefence());
+		+ std::to_string(this->getStat()->getDefence());
 
 	return str;
 }
 
-void Armour::setStats(std::string name, int defence)
-{
-	this->stats.setName(name);
-	this->stats.setDefence(defence);
-}
 
-void Armour::setStat(Stats stats)
+void Armour::generateArmour()
 {
-	this->stats = stats;
-}
-
-Stats Armour::getStat()
-{
-	return this->stats;
+	switch (rand() % 3)
+	{
+	case 0:
+		this->getStat()->getsetName("Wooden Armour");
+		this->getStat()->setDefence(2);
+		break;
+	case 1:
+		this->getStat()->setName("Iron Armour");
+		this->getStat()->setDefence(4);
+		break;
+	case 2:
+		this->getStat()->setName("Titanium Armour");
+		this->getStat()->setDefence(6);
+		break;
+	default:
+		this->getStat()->setName("Chainmail");
+		this->getStat()->setDefence(1);
+		break;
+	}
 }

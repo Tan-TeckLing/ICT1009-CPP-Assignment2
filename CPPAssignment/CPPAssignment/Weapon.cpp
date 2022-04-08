@@ -18,23 +18,31 @@ std::string Weapon::toString()
 		+" | Type: "
 		+ this->type;
 		+" | Attack: "
-		+ std::to_string(this->stats.getAttack());
+		+ std::to_string(this->stats->getAttack());
 
 	return str;
 }
 
-void Weapon::setStats(std::string name, int attack)
-{
-	this->stats.setName(name);
-	this->stats.setAttack(attack);
-}
 
-void Weapon::setStat(Stats stats)
+void Weapon::generateWeapon()
 {
-	this->stats = stats;
-}
-
-Stats Weapon::getStat()
-{
-	return this->stats;
+	switch (rand() % 3)
+	{
+	case 0:
+		this->getStat()->setName("Dagger");
+		this->getStat()->setAttack(2);
+			break;
+	case 1:
+		this->getStat()->setName("Sword");
+		this->getStat()->setAttack(4);
+			break;
+	case 2:
+		this->getStat()->setName("Rapier");
+		this->getStat()->setAttack(6);
+			break;
+	default:
+		this->getStat()->setName("Knife");
+		this->getStat()->setAttack(1);
+			break;
+	}
 }

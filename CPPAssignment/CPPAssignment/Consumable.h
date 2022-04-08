@@ -2,13 +2,13 @@
 
 #include "Item.h"
 
-class Armour : public Item
+class Consumable : public Item
 {
 private:
 	int type;
 public:
-	Armour();
-	virtual ~Armour();
+	Consumable();
+	virtual ~Consumable();
 
 	//Functions
 	std::string toString();
@@ -16,5 +16,7 @@ public:
 	//Accessors
 	inline const int& getType() const { return this->type; }
 
-	void generateArmour();
+	void generateConsumable();
+
 };
+

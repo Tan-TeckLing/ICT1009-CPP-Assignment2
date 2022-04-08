@@ -6,22 +6,17 @@ class Weapon : public Item
 {
 private:
 	int type;
-	Stats stats;
 public:
 	Weapon();
 		virtual ~Weapon();
 
-
 	//Functions
 	std::string toString();
-	void setStats(std::string name, int attack);
 
 	//Accessors
 	inline const int& getType() const { return this->type; }
 
-	//Stats
-	void setStat(Stats);
-	Stats getStat();
+	void generateWeapon();
 
 
 };

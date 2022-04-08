@@ -78,6 +78,16 @@ int Stats::getAttack()
 	return this->attack;
 }
 
+int Stats::setHeal(int heal)
+{
+	this->heal = heal;
+}
+
+int Stats::getHeal()
+{
+	return this->heal;
+}
+
 
 ostream& operator<<(ostream& out, Stats stat)
 {
