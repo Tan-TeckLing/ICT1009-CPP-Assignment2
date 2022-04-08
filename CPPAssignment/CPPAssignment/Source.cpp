@@ -49,16 +49,16 @@ void classSelect(int& c) {
 	{
 	case 1:
 		cout << "You have chosen the durable Knight!" << endl;
-		return player->classSelect(name, 6, 2, 4); //stats are by maxHp, attack, defence
+		return gameSystem->player->classSelect(name, 6, 2, 4); //stats are by maxHp, attack, defence
 	case 2:
 		cout << "You have chosen the dangerous Rogue!" << endl;
-		return player->classSelect(name, 6, 4, 2);
+		return gameSystem->player->classSelect(name, 6, 4, 2);
 	case 3:
 		cout << "You have chosen the ruthless Berzerker!" << endl;
-		return player->classSelect(name, 4, 7, 1);
+		return gameSystem->player->classSelect(name, 4, 7, 1);
 	default:
 		cout << "You have chosen the ruthless Adventurer!" << endl;
-		return player->classSelect(name, 4, 4, 4);
+		return gameSystem->player->classSelect(name, 4, 4, 4);
 	}
 	cout << endl;
 }
@@ -80,7 +80,7 @@ int main()
 	}
 
 
-	cout << "You better move fast, " << player->getStat()->getName() << ". The goblins are attacking the city." << endl;
+	cout << "You better move fast, " << gameSystem->player->getStat()->getName() << ". The goblins are attacking the city." << endl;
 	cout << "\n----------------------Press any key to continue----------------------" << endl;
 	_getch();
 

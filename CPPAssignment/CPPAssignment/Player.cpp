@@ -1,7 +1,5 @@
 #include "Player.h"
 
-Player* player = new Player();
-
 Player::Player()
 {
 	this->setStat(new Stats());
@@ -45,6 +43,7 @@ void Player::classSelect(std::string name, int maxHealth, int attack, int defenc
 {
 	this->getStat()->setName(name);
 	this->getStat()->setMaxHealth(maxHealth);
+	this->getStat()->setCurrentHealth(maxHealth);
 	this->getStat()->setAttack(attack);
 	this->getStat()->setDefence(defence);
 }
