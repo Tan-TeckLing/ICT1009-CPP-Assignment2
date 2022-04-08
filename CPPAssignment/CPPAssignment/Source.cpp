@@ -86,8 +86,6 @@ int main()
 	_getch();
 
 	scenarioSystem->newScenario();
-	scenarioSystem->currentScenario->scenarioUpdate();
-	scenarioSystem->currentScenario->scenarioUpdate();
 
 	return 0;
 }
