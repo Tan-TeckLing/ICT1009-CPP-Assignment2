@@ -39,6 +39,7 @@ void ScenarioSystem::newScenario()
 	{
 		this->currentScenario = new GameOver(this->pastScenario.size());
 	}
+
 	this->currentScenario->scenarioUpdate();
 }
 
